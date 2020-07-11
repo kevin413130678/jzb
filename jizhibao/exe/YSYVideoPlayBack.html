@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>视频监控</title>
+    <meta name="renderer" content="ie-comp">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+    <style type="text/css">
+        video{width: 100%;}
+        .main{width:100%;height:100%;position:relative;overflow: hidden;}
+    </style>
+</head>
+<body onload="init()">
+<div style="width:890px;height:400px;">
+    <object classid="clsid:54FC7795-1014-4BF6-8BA3-500C61EC1A05" id="EZUIKit" style="width:100%;height:100%;z-index:0;" name="EZUIKit" ></object>
+    开始时间：<input type="text" style="width:125px;" id="PlayBackstart" />
+    结束时间：<input type="text" style="width:125px;" id="PlayBackend" />
+    <input type="button" value="回放" onclick="StartPlayBack()" style=""/><span style="color:Red;font-size:12px;">&emsp;时间20180701090000代表2018-07-01 09:00:00</span>
+    <a href="EZUIKit.exe" target="view_window">视频插件下载</a>
+</div>
+<script type="text/javascript" src="PlayBack.js"></script>
+<script language="javascript" for="EZUIKit" event="PluginEventHandler(lEventType, strErrorCode, lInterErrorCode)">   //打开预览时触发该事件
+        PluginEventHandler(lEventType, strErrorCode, lInterErrorCode);
+</script>
+</body>
+</html>
